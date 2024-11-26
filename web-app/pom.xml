@@ -68,7 +68,7 @@
                             <workingDirectory>${project.basedir}/angular/public</workingDirectory>
                             <arguments>
                                 <argument>federation.manifest.prod.json</argument>
-                                <argument>federation.manifest.json</argument>
+                                <argument>${project.build.directory}/federation.manifest.json</argument>
                             </arguments>
                         </configuration>
                     </execution>
