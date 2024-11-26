@@ -53,7 +53,9 @@
 						"styles": [
 							"src/styles.css"
 						],
-						"scripts": []
+						"scripts": [],
+            "baseHref": "/micro-ui/",
+            "deployUrl": "/micro-ui/"
 					}
 				},
 				"esbuild": {
@@ -76,7 +78,9 @@
 						"styles": [
 							"src/styles.css"
 						],
-						"scripts": []
+            "scripts": [],
+            "baseHref": "/micro-ui/",
+            "deployUrl": "/micro-ui/"
 					},
 					"configurations": {
 						"production": {

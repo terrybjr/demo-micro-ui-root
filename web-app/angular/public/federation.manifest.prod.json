@@ -1,4 +1,4 @@
 {
-  "app1": "/app1/remoteEntry.json",
-  "app2": "/app2/remoteEntry.json"
+  "app1": "/micro-ui/app1/remoteEntry.json",
+  "app2": "/micro-ui/app2/remoteEntry.json"
 }

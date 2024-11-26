@@ -99,7 +99,7 @@
                             <arguments>
                                 <argument>build</argument>
                                 <argument>--base-href</argument>
-                                <argument>/</argument>
+                                <argument>/micro-ui/</argument>
                             </arguments>
                         </configuration>
                     </execution>

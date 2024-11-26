@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RouterLink, RouterOutlet} from "@angular/router";
+import {initFlowbite} from 'flowbite';
 
 @Component({
   selector: 'app-nav',
@@ -11,6 +12,11 @@ import {RouterLink, RouterOutlet} from "@angular/router";
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
-export class NavComponent {
+export class NavComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit(): void {
+    initFlowbite();
+  }
 
 }
