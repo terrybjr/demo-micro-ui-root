@@ -15,8 +15,14 @@
 					"options": {},
 					"configurations": {
 						"production": {
-							"target": "angular:esbuild:production"
-						},
+							"target": "angular:esbuild:production",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
 						"development": {
 							"target": "angular:esbuild:development",
 							"dev": true

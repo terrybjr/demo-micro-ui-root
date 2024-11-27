@@ -58,17 +58,32 @@
                 <version>1.6.0</version>
                 <executions>
                     <execution>
-                        <id>copy-prod-manifest</id>
+                        <id>rename-manifest-before-build</id>
                         <phase>generate-sources</phase>
                         <goals>
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>cp</executable>
+                            <executable>mv</executable>
+                            <workingDirectory>${project.basedir}/angular/public</workingDirectory>
+                            <arguments>
+                                <argument>federation.manifest.json</argument>
+                                <argument>federation.manifest.backup.json</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>rename-prod-manifest</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>mv</executable>
                             <workingDirectory>${project.basedir}/angular/public</workingDirectory>
                             <arguments>
                                 <argument>federation.manifest.prod.json</argument>
-                                <argument>${project.build.directory}/federation.manifest.json</argument>
+                                <argument>federation.manifest.json</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -98,8 +113,40 @@
                             <workingDirectory>${project.basedir}/angular</workingDirectory>
                             <arguments>
                                 <argument>build</argument>
+                                <argument>--configuration</argument>
+                                <argument>production</argument>
                                 <argument>--base-href</argument>
                                 <argument>/micro-ui/</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>rename-manifest-after-build</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>mv</executable>
+                            <workingDirectory>${project.basedir}/angular/public</workingDirectory>
+                            <arguments>
+                                <argument>federation.manifest.json</argument>
+                                <argument>federation.manifest.prod.json</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>restore-original-manifest</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>mv</executable>
+                            <workingDirectory>${project.basedir}/angular/public</workingDirectory>
+                            <arguments>
+                                <argument>federation.manifest.backup.json</argument>
+                                <argument>federation.manifest.json</argument>
                             </arguments>
                         </configuration>
                     </execution>
