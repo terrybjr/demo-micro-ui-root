@@ -15,10 +15,10 @@ pipeline {
         stage('Stop Existing Docker Container') { // Stage for stopping any existing Docker container
             steps {
                 script {
-                    // Stop any running Docker containers from the 'btd-app:latest' image
+                    // Stop any running Docker containers from the 'demo-micro-ui-root:latest' image
                     sh '''
-                       docker ps -q -f ancestor=btd-ui:latest | xargs -r docker stop
-                       docker ps -a -q -f ancestor=btd-ui:latest | xargs -r docker rm
+                       docker ps -q -f ancestor=demo-micro-ui-root:latest | xargs -r docker stop
+                       docker ps -a -q -f ancestor=demo-micro-ui-root:latest | xargs -r docker rm
                     '''
                 }
             }
@@ -26,7 +26,7 @@ pipeline {
         stage('Build Docker Image') { // Stage for building the Docker image
             steps {
                 script {
-                    docker.build('btd-ui:latest', './web-app') // Build Docker image from the Dockerfile in the 'btd-app-ear' directory
+                    docker.build('demo-micro-ui-root:latest', './web-app') // Build Docker image from the Dockerfile in the 'web-app' directory
                     sh 'docker image prune -f' // Remove all dangling Docker images
                 }
             }
@@ -34,8 +34,8 @@ pipeline {
         stage('Replace Image in Container') { // Stage for replacing the running Docker container with a new one
             steps {
                 script {
-                    // Run the Docker container from the 'btd-app:latest' image
-                    sh 'docker run --restart unless-stopped -d -p 9082:9082 btd-ui:latest'
+                    // Run the Docker container from the 'demo-micro-ui-root:latest' image
+                    sh 'docker run --restart unless-stopped -d -p 9083:9083 demo-micro-ui-root:latest'
                 }
             }
         }
