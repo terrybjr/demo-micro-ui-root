@@ -16,4 +16,4 @@ RUN ln -s /opt/ol/wlp/usr/servers/defaultServer /config/ \
 # This script will add the application and any required features and runtimes to the image
 COPY --chown=1001:0 target/micro-ui-root.war /config/dropins/
 
-EXPOSE 9083 9445
+EXPOSE 9082 9445

@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container from the 'demo-micro-ui-root:latest' image
-                    sh 'docker run --restart unless-stopped -d -p 9083:9083 demo-micro-ui-root:latest'
+                    sh 'docker run --restart unless-stopped -d -p 9082:9082 demo-micro-ui-root:latest'
                 }
             }
         }
