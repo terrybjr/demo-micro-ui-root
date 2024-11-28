@@ -14,10 +14,15 @@ import {environment} from '../../../environments/environment';
   styleUrl: './nav.component.css'
 })
 export class NavComponent implements OnInit {
-  devUrl: string = environment.brianTheDeveloperLink;
+  devUrl?: string;
   constructor() { }
 
   ngOnInit(): void {
+    if(environment.production) {
+      this.devUrl = 'https://' + environment.brianTheDeveloperLink
+    } else {
+      this.devUrl = 'http://' + environment.brianTheDeveloperLink;
+    }
     initFlowbite();
   }
 
