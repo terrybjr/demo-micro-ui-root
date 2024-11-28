@@ -3,6 +3,6 @@ export const environment = {
   manifestFile: 'federation.manifest.prod.json',
 
   // URLS
-  brianTheDeveloperLink: 'https://www.brianthedeveloper.com'
+  brianTheDeveloperLink: 'brianthedeveloper.com'
 
 };
