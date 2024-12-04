@@ -60,8 +60,8 @@
 							"src/styles.css"
 						],
 						"scripts": [],
-            "baseHref": "/micro-ui",
-            "deployUrl": "/micro-ui"
+            "baseHref": "/micro-ui/",
+            "deployUrl": "/micro-ui/"
 					}
 				},
 				"esbuild": {
@@ -85,8 +85,8 @@
 							"src/styles.css"
 						],
             "scripts": [],
-            "baseHref": "/micro-ui",
-            "deployUrl": "/micro-ui"
+            "baseHref": "/micro-ui/",
+            "deployUrl": "/micro-ui/"
 					},
 					"configurations": {
 						"production": {
