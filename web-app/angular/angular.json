@@ -82,10 +82,14 @@
 						"styles": [
 							"src/styles.css"
 						],
-            "scripts": []
+            "scripts": [],
+            "baseHref": "/",
+            "deployUrl": "/"
 					},
 					"configurations": {
 						"production": {
+              "baseHref": "",
+              "deployUrl": "",
 							"budgets": [
 								{
 									"type": "initial",
@@ -107,7 +111,9 @@
               ]
           },
 						"development": {
-							"optimization": false,
+              "baseHref": "/micro-ui/",
+              "deployUrl": "/micro-ui/",
+              "optimization": false,
 							"extractLicenses": false,
 							"sourceMap": true
 						}
