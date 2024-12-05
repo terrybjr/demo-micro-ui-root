@@ -8,12 +8,12 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'app1',
+    path: 'application1',
     loadComponent: () =>
       loadRemoteModule('app1', './Component').then((m) => m.AppComponent),
   },
   {
-    path: 'app2',
+    path: 'application2',
     loadComponent: () =>
       loadRemoteModule('app2', './Component').then((m) => m.AppComponent),
   }
